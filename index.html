@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система создания учебного плана</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <label class="theme-switch-label" for="themeSwitch">Изменить тему</label>
+    <input type="checkbox" id="themeSwitch" onclick="toggleTheme()">
+
+    <div class="container">
+        <h1>Поля ввода данных</h1>
+        <div class="create-plan">
+            <label>Идентификатор:</label>
+            <input type="number" id="id">
+            <label>Номер недели:</label>
+            <input type="number" min="0" id="weekNumber">
+
+            <label>День недели:</label>
+            <select id="weekDay">
+                <option value="Понедельник">Понедельник</option>
+                <option value="Вторник">Вторник</option>
+                <option value="Среда">Среда</option>
+                <option value="Четверг">Четверг</option>
+                <option value="Пятница">Пятница</option>
+                <option value="Суббота">Суббота</option>
+                <option value="Воскресенье">Воскресенье</option>
+            </select>
+
+            <label>Время:</label>
+            <input type="time" id="time">
+
+            <label>Группа:</label>
+            <input type="text" id="group">
+
+            <label>Преподаватель:</label>
+            <input type="text" id="teacher">
+
+            <label>Дисциплина:</label>
+            <input type="text" id="subject">
+
+            <label>Вариант занятия:</label>
+            <input type="text" id="subject_lvl2">
+
+            <label>Аудитория:</label>
+            <input type="text" id="class_room">
+
+            <button onclick="createPlan()">Добавить</button>
+        </div>
+
+        <h1>Действия с учебным планом</h1>
+        <div class="show-plan">
+            <div class="buttons">
+                <button onclick="showPlan()">Показать план</button>
+                <button onclick="updatePlan()">Сохранить изменения</button>
+                <button onclick="deleteRow()">Удалить строку</button>
+            </div>
+            <table id="planTable">
+                <thead>
+                    <tr>
+                        <th>Идентификатор</th>
+                        <th>Номер недели</th>
+                        <th>День недели</th>
+                        <th>Время</th>
+                        <th>Группа</th>
+                        <th>Преподаватель</th>
+                        <th>Дисциплина</th>
+                        <th>Вариант занятия</th>
+                        <th>Аудитория</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const tableBody = document.getElementById('planTable').tBodies[0];
+                    tableBody.addEventListener('click', selectRowForUpdate);
+                });
+            </script>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <footer>
+        <p>Здесь могла быть Ваша реклама=)</p>
+        <p>2025</p>
+    </footer>
+</body>
+
+</html>
+
+
+
+

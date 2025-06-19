@@ -1,0 +1,115 @@
+:root {
+    --bg-color: #222;
+    --text-color: #fff;
+    --accent-color: #007bff;
+    --border-color: #333;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme {
+    --bg-color: #fff;
+    --text-color: #333;
+    --border-color: #ddd;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.theme-switch-label {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.theme-switch-label::before {
+    content: "🌑";
+    margin-right: 5px;
+}
+
+#themeSwitch {
+    display: none;
+}
+
+#themeSwitch:checked+.theme-switch-label::before {
+    content: "🌠";
+}
+
+.create-plan label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.create-plan input,
+.create-plan select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.create-plan button,
+.show-plan button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.create-plan button:hover,
+.show-plan button:hover {
+    background: darken(var(--accent-color), 10%);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+th {
+    background: var(--border-color);
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.buttons button {
+    flex: 0 0 48%;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
